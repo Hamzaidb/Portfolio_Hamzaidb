@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Component Imports
+//import Compatibility from "../components/compatibility.astro";
 import CallToAction from '../components/CallToAction.astro';
 import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
@@ -30,33 +31,46 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Hamza Idbouiguiguane"
+					tagline="Jeune Développeur passionné à la recherche d'une alternance ou d'un stage"
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
+						<a href="/about/" class="button"><Icon icon="user-circle" size="1.33em" /> À propos de moi
+							<Icon icon="arrow-line-up-right" size="1.33em" /></a>
+
+						<!-- <Pill href="/about"> Developer</Pill>
 						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill> -->
+						
 					</div>
+					<div class= "cta-hero">
+					<CallToAction href="mailto:me@example.com">
+					Envoyez moi un message
+					<Icon icon="paper-plane-tilt" size="1em" />
+				</CallToAction>
+			</div>
 				</Hero>
 
+				
+
 				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
-					width="480"
-					height="620"
-					src="/assets/portrait.jpg"
+					alt="Avatar ReadyPlayerMe de Hamza Idbouiguiguane"
+					width="380"
+					height="520"
+					src="/assets/ReadyPlayerMe-Avatar.jpeg"
 				/>
 			</header>
 
+			
 			<Skills />
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my featured work for clients from the past few years.</p>
+					<h3>Mes travaux</h3>
+					<p>Jetez un coup d'œil ci-dessous à certains de mes travaux que j'ai pu réaliser.</p>
 				</header>
 
 				<div class="gallery">
@@ -73,7 +87,7 @@ const projects = (await getCollection('work'))
 
 				<div class="cta">
 					<CallToAction href="/work/">
-						View All
+						Tout voir
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
 				</div>
@@ -81,41 +95,83 @@ const projects = (await getCollection('work'))
 
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
+					<h3>Mes compétences</h3>
 					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take
-						a look below to learn more.
+						
 					</p>
 				</header>
 
 				<div class="gallery">
 					<Grid variant="small">
 						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
+							[
+								{src: '/assets/reacticon.svg', alt: 'Medium', class: 'small-svg', txt: 'React'},
+								{src: '/assets/jsicon.svg', alt: 'Medium', class: 'small-svg', txt: 'JS'},
+								{src: '/assets/phpicon.svg', alt: 'Medium', class: 'small-svg', txt:'php'},
+								{src: '/assets/vueicon.svg', alt: 'Medium', class: 'small-svg', txt:'vuejs'},
+								{src: '/assets/sass-svg.svg', alt: 'Medium', class: 'small-svg', txt:'vuejs'},
+								{src: '/assets/Twig-svg.svg', alt: 'Medium', class: 'small-svg', txt:'vuejs'},
+								{src: '/assets/figma_icon.svg', alt: 'Medium', class: 'small-svg', txt:'figma'},
+								{src: '/assets/wpicon.svg', alt: 'Medium', class: 'small-svg', txt:'wordpress'},
+								{src: '/assets/unityicon.svg', alt: 'Medium', class: 'small-svg', txt:'unity'},
+							].map((image) => (
 								<li class="mention-card">
-									<p>{brand}</p>
+									
+					<img src={image.src} alt={image.alt} class={image.class} />
+				
+				
 								</li>
 							))
 						}
 					</Grid>
+					
 				</div>
 			</section>
 		</main>
+		
 
 		<ContactCTA />
 	</div>
 </BaseLayout>
 
 <style>
+
+
+
+	.small-svg {
+		width: 20%; /* change this to the size you want */
+		height: auto;
+	}
+
+	.button {
+		display: flex;
+		padding: 0.5rem 1rem;
+		gap: 0.5rem;
+		color: var(--accent-text-over);
+		border: 1px solid var(--accent-regular);
+		background-color: var(--accent-regular);
+		border-radius: 999rem;
+		font-size: var(--text-md);
+		line-height: 1.35;
+		white-space: nowrap;
+		text-decoration: none;
+	}
+
 	.hero {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
+		margin-bottom: 10px;
 	}
 
 	.roles {
 		display: none;
+	}
+
+	.cta-hero {
+		width: fit-content;
+		margin-top: 50px;
 	}
 
 	.hero img {
@@ -124,6 +180,11 @@ const projects = (await getCollection('work'))
 		object-position: top;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);
+		transition: transform 0.3s ease;
+	}
+
+	.hero img:hover {
+		transform: translateY(-10px);
 	}
 
 	@media (min-width: 50em) {
@@ -241,6 +302,11 @@ const projects = (await getCollection('work'))
 		color: var(--gray-300);
 		background: var(--gradient-subtle);
 		box-shadow: var(--shadow-sm);
+		transition: transform 0.3s ease;
+	}
+
+	.mention-card:hover {
+		transform: translateY(-10px);
 	}
 
 	@media (min-width: 50em) {

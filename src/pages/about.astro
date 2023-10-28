@@ -1,61 +1,147 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import CTADownload from '../components/CTADownload.astro';
+import Grid from '../components/Grid.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import CallToAction from '../components/CallToAction.astro';
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+<BaseLayout title="About | Hamza Idbouiguiguane" description="About Hamza Idbouiguiguane">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+				title="À propos"
+				tagline=" Lisez ci-dessous pour en savoir plus sur moi et mon parcours"
 			>
-				<img
+				<!-- <img
 					width="1553"
 					height="873"
 					src="/assets/at-work.jpg"
 					alt="Jeanine White at work with a colleague"
-				/>
+				/> -->
+				<CTADownload href="/assets/CV.pdf" >
+						Télécharger le CV
+						<Icon icon="file" size="1em" />
+				</CTADownload>
+				
 			</Hero>
+			
 
 			<section>
 				<h2 class="section-title">Background</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl
-						condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu
-						odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum
-						dui faucibus in ornare.
+						Etudiant en 3ème année de BUT MMI, 
+						je suis passionné par le développement web et j'aspire à en faire mon métier. 
+						Fort d'une expérience en stage, j'ai pu acquérir des compétences concrètes dans le domaine. 
+						Actuellement à la recherche d'une alternance pour ma 3ème année de BUT pour l’année 2023/2024, 
+						je suis motivé à continuer d'apprendre et de contribuer à des projets passionnants. 
+						Mon objectif est de mettre en pratique mes connaissances et de développer mes compétences 
+						en tant que développeur web au sein d'une entreprise qui pourra m'encadrer de la meilleure des façons
+						et qui me permettra progresser professionnellement.
 					</p>
-					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
-					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
-					</p>
+					
+				
+						
+					
 				</div>
 			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
-				</div>
-			</section>
-			<section>
+			<section>	
+			<h2 class="section-title">Education</h2>
+			<div class="content">
+					  <ul class="timeline">
+						<!-- Début d'un élément de la timeline -->
+						<li class="timeline-item">
+						  <div class="timeline-info">
+							<span>2021 - 2024</span>
+						  </div>
+						  <div class="timeline-marker"></div>
+						  <div class="timeline-content">
+							<h4 class="timeline-title">BUT (-ex DUT) MMi - IUT Cergy Pontoise</h4>
+							<br>
+							<p>Le BUT MMI parcours développement Web et dispositifs interactifs forme au développement de sites Web et à l’intégration d’applications multimédias ou mobiles. Il aborde notamment les outils et langages informatiques nécessaires à la conception et à la gestion de ces médias. Il prépare notamment aux métiers d’intégrateur ; de développeur « back », « front », ou « full stack »  d’intégrateur de dispositifs de réalité virtuelle. 
+						  </div>
+						</li>
+						<!-- Fin d'un élément de la timeline -->
+						<!-- Ajoutez plus d'éléments de timeline ici pour chaque expérience éducative -->
+						<li class="timeline-item">
+							<div class="timeline-info">
+							  <span>2019 - 2021</span>
+							</div>
+							<div class="timeline-marker"></div>
+							<div class="timeline-content">
+							  <h4 class="timeline-title">Licence MIPI - Sorbonne Université</h4>
+							  <br>
+							  <p>Ce parcours ouvre préférentiellement sur les licences mentions Mathématiques, Informatique, Physique, ingénierie.
+								Il privilégie une approche formelle, symbolique et abstraite des sciences. (niveau reorientation)</p>
+							</div>
+						  </li>
+					  </ul>
+					</div>
+				  </section>
+				<section>
+					<h2 class="section-title">Experience</h2>
+					<div class="content">
+						<ul class="timeline">
+							<!-- Début d'un élément de la timeline -->
+							<li class="timeline-item">
+							  <div class="timeline-info">
+								<span>2023</span>
+							  </div>
+							  <div class="timeline-marker"></div>
+							  <div class="timeline-content">
+								<h4 class="timeline-title">Développeur Front-end Stagiaire</h4>
+								<br>
+								<p>Chez ZeMust - Chatou</p>
+								<br>
+								<ul>
+									<li>Conception et intégration du design d'interfaces web attractives et
+									ergonomiques, en utilisant des technologies telles que HTML, CSS et
+									Javascript</li>
+									<li>Développement d'un module web interactif en utilisant le framework Vue.js,
+									offrant une expérience utilisateur fluide et réactive</li>
+									<li>Collaboration avec une équipe multidisciplinaire pour comprendre les besoins
+									et les exigences des clients, et proposer des solutions techniques efficaces</li>
+									<li>Participation active aux réunions d'équipe, aux revues de code et aux sessions
+									de brainstorming, contribuant ainsi à l'amélioration du développement.</li>
+									
+								</ul>
+							  </div>
+							</li>
+							
+						  </ul>
+					</div>
+				</section>
+			<!-- <section>
 				<h2 class="section-title">Skills</h2>
 				<div class="content">
-					<p>officia unde omnis</p>
+					<div class="gallery">
+					<Grid variant="small">
+						{
+							[
+								{src: '/assets/reacticon.svg', alt: 'Medium', class: 'small-svg', txt: 'React'},
+								{src: '/assets/jsicon.svg', alt: 'Medium', class: 'small-svg', txt: 'JS'},
+								{src: '/assets/phpicon.svg', alt: 'Medium', class: 'small-svg', txt:'php'},
+								{src: '/assets/vueicon.svg', alt: 'Medium', class: 'small-svg', txt:'vuejs'},
+								{src: '/assets/figma_icon.svg', alt: 'Medium', class: 'small-svg', txt:'figma'},
+								{src: '/assets/wpicon.svg', alt: 'Medium', class: 'small-svg', txt:'wordpress'},
+								{src: '/assets/unityicon.svg', alt: 'Medium', class: 'small-svg', txt:'unity'},
+							].map((image) => (
+								<li class="mention-card">
+									
+					<img src={image.src} alt={image.alt} class={image.class} />
+				
+				
+								</li>
+							))
+						}
+					</Grid>
 				</div>
-			</section>
+				</div>
+			</section> -->
 		</main>
 
 		<ContactCTA />
@@ -63,6 +149,82 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
+
+
+	/*==================================
+    TIMELINE
+==================================*/
+
+    /*-- GENERAL STYLES
+    ------------------------------*/
+    .timeline {
+        line-height: 1.4em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    
+    }
+
+    /*----- TIMELINE ITEM -----*/
+
+    .timeline-item {
+        position: relative;
+		margin-bottom: 40px;
+        
+    }
+
+    /*----- TIMELINE INFO -----*/
+
+    .timeline-info {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin: 0 0 .5em 0;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+    
+	
+	.mention-card {
+		display: flex;
+		height: 7rem;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		color: var(--gray-300);
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+		transition: transform 0.3s ease;
+	}
+
+	.mention-card:hover {
+		transform: translateY(-10px);
+	}
+
+	@media (min-width: 50em) {
+		.mention-card {
+			border-radius: 1.5rem;
+			height: 9.5rem;
+		}
+	}
+
+    .small-svg {
+		width: 20%; /* change this to the size you want */
+		height: auto;
+	}
+
+
+    
+
+    
+
+	.CallToAction {
+    width: 50px;
+}
+
 	.about {
 		display: flex;
 		flex-direction: column;
